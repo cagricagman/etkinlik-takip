@@ -18,6 +18,40 @@
     </form>
 </nav>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="text-center">Etkinlik Listesi</h3>
+  </div>
+  <div class="col-sm-12" style="margin-bottom: 10px;">
+    <input class="form-control col-sm-12" id="description" type="text" placeholder="Etkinlik Notunuz...">
+</div>
+<div class="col-sm-12">
+    <button class="btn btn-primary btn-block sendToFireBase">KAYDET</button>
+</div>
+</div>
+
+<div class="row mt-5 mb-5">
+    <div class="col-sm-12">
+      <h4 class="text-center" style="margin-top: 5px;">Etkinlikler</h4>
+  </div>
+  <div class="col-sm-12">
+      <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Açıklama</th>
+      <th scope="col w100 text-center">Durum</th>
+      <th scope="col w100 text-center">Sil</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+  </div>
+</div>
+
+</div>
+
 
 <script src="assets/js/jquery-3.2.1.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
