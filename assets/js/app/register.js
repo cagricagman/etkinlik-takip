@@ -14,7 +14,10 @@ $(document).ready(function() {
 		var password=$("#password").val();
 		firebase.auth().createUserWithEmailAndPassword(email, password)
 		.then(function () {
-			window.location.href="index.html";
+			firebase.auth().signInWithEmailAndPassword(email, password)
+			.then(function(){
+				window.location.href = "index.html";
+			})
 		}).catch(function (error) {
 			alert(error.message);
 		})
