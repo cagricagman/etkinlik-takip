@@ -14,6 +14,10 @@
 
 }
 
+.golge{
+	box-shadow: 0 20px 40px -15px rgba(0,0,0,1);
+}
+
 .mainbody{
 	background: #22c1c3;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */

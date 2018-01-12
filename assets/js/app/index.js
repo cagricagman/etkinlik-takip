@@ -14,6 +14,7 @@ $(document).ready(function () {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       current_user = user.uid;
+      $(".user-text").text(user.email);
       $("#logout").click(function () {
         firebase.auth().signOut().then(function () {
           window.location.href = "login.html";
