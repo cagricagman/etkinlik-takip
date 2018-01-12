@@ -29,6 +29,31 @@ $(document).ready(function () {
         $("#description").val('');
       })
 
+      var todoRef = firebase.database().ref().child("users/" + current_user).child("etkinlik");
+      todoRef.on("value", function(snapshot){
+
+          var $parent = $(".todoList").children("tbody");
+
+          $parent.html('');
+
+          snapshot.forEach(function(item){
+
+              var completed = item.val().completed == true ? "checked" : "";
+
+              var description_elem = "<td>" + item.val().description + "</td>";
+              var completed_elem = "<td class='text-center'><input data-key='" + item.key + "' type='checkbox' class='switchery-plugin' " + completed + "/></td>";
+              var removeBtn_elem = "<td class='text-center'><button data-key='" + item.key + "' class='btn btn-danger btn-block removeBtn'>Sil</button></td>";
+
+              $parent.append("<tr>" + description_elem + completed_elem + removeBtn_elem + "</tr>");
+
+          })
+
+          $(".switchery-plugin").each(function(){
+              new Switchery(this);
+          })
+      });
+
+
     }
   })
 })
