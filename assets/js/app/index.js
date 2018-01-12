@@ -53,6 +53,16 @@ $(document).ready(function () {
           })
       });
 
+      $("body").on("click", ".removeBtn", function () {
+        var $key = $(this).data("key");
+        firebase.database().ref("users/" + current_user).child("etkinlik").child($key).remove();
+      })
+
+      $("body").on("change" , ".switchery-plugin", function () {
+        var $completed = $(this).prop("checked");
+        var $key = $(this).data("key");
+        firebase.database().ref("users/" + current_user).child("etkinlik").child($key).child("completed").set($completed);
+      })
 
     }
   })
